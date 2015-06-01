@@ -25,7 +25,8 @@ class ProjectsController < ApplicationController
       # Third way: If you do not wish to use either notice or alert, you must specify flash as a hash:
       redirect_to @project, flash: { success: "Project has been created." }
     else
-      # nothing yet
+      flash[:alert] = "Project has not been created."
+      render "new"
     end
   end
 
