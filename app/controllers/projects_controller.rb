@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-
+    @projects = Project.all
   end
 
   def new
@@ -8,7 +8,6 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    p params
     @project = Project.new(project_params)
 
     if @project.save
